@@ -29,7 +29,6 @@ public class CinemaServices {
     }
 
     public ResponseEntity<?> purchaseSeat(Seat seat) {
-        getCinema();
         if (seat.getRow() > 9 || seat.getColumn() > 9
                 || seat.getRow() < 1 || seat.getColumn() < 1) {
             return ResponseEntity.badRequest().body(Map.of("error", "The number of a row or a column is out of bounds!"));
